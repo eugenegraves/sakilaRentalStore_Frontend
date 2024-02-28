@@ -1,12 +1,12 @@
-//import React, { useEffect, useState } from 'react';
-//import axios from 'axios';
-import Navbar from './components/Navbar.js'
+import React from 'react';
+import LandingPage from './components/LandiingPage.js';
 import './App.css';
 
 function App() {
+
   return (
     <div>
-      <Navbar />
+      <LandingPage />
     </div>
   );
 }

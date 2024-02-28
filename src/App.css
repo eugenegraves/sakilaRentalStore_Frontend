@@ -3,10 +3,19 @@
   padding: 0;
 }
 
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
+}
+
 #root {
   background-color: #131313;
   width: 100vw;
-  height: 100vh;
 }
 
 .navbar {
@@ -42,4 +51,108 @@
 .linkList {
   display: flex;
   padding-right: 20px;
+}
+
+.hero-section {
+  width: 88vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.hero-title {
+  color: rgb(226, 226, 226);
+  font-size: 64px;
+  width: 40%;
+  /*padding: auto 0px;*/
+}
+
+.topFive-header {
+  width: 100vw;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.cardSection-container {
+  width: 100vw;
+  margin-top: 70px;
+  background-color: #1b1b1b;
+  border-radius: 50px;
+}
+
+.topFive-header {
+  color: rgb(226, 226, 226);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 65px;
+}
+
+.card {
+  background-color: #2d2d2d;
+  width: 220px;
+  height: 300px;
+  border-radius: 15px;
+  margin: 0 50px 35px; 
+  text-align: center;
+}
+
+.card-title {
+  padding: 15px 0;
+  color: rgb(98, 153, 192);
+}
+
+.pseudo-picture {
+  width: 80%;
+  height: 40%;
+  background-image: linear-gradient(125deg, rgb(178, 115, 219) 0%, rgb(151, 98, 167) 38%, rgb(111, 109, 219) 100%);
+  margin-bottom: 20px;
+  display: inline-block;
+  border-radius: 15px;
+}
+
+.details-button {
+  margin: 45px 0;
+  padding: 5px;
+  border-radius: 5px;
+  border-style: none;
+  display: none;
+}
+
+.card:hover .details-button {
+  display: inline-block;
+}
+
+.details-button:hover {
+  background-color: rgb(201, 230, 255);
+}
+
+.card-rentals, .card-id {
+  color: rgb(226, 226, 226);
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup {
+  width: 80%;
+  max-width: 600px;
+  background-color: #333333;
+  color: rgb(206, 206, 206);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
