@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import TopFiveFilmsSection from './TopFiveFilmsSection';
+import TopFiveActorsSection from './TopFiveActorsSection';
 
 const LandingPage = () => {
     return (
@@ -113,6 +114,7 @@ const LandingPage = () => {
 
             </div>
             <TopFiveFilmsSection />
+            <TopFiveActorsSection />
     </div>
     );
 };
