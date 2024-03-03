@@ -16,6 +16,8 @@ const FilmPopup = ({ isActive, closePopup, details }) => {
                         <p>Average Movie Rating: {details[2]}</p>
                         <br />
                         <p>Appears In: {details[3]}</p>
+                        <br />
+                        <p>Top 5 Most Rented Films All-Time: {details[4].split(", ")[0]}, {details[4].split(", ")[1]}, {details[4].split(", ")[2]}, {details[4].split(", ")[3]}, {details[4].split(", ")[4]}</p>
                     </div>
                 </div>
             </div>

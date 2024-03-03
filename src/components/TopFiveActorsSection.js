@@ -17,7 +17,7 @@ function Card({ id, title, rentals, openPopup}) {
 const TopFiveActorsSection = () => {
     const [data, setData] = useState([]);
     const [popupActive, setPopupActive] = useState(false);
-    const [filmDetails, setFilmDetails] = useState({});
+    const [actorDetails, setActorDetails] = useState({});
     const baseURL = "http://127.0.0.1:5000";
     
     useEffect(() => {
@@ -28,7 +28,7 @@ const TopFiveActorsSection = () => {
         try {
             const response = await axios.get(baseURL + '/top_five_actors');
             setData(response.data);
-            console.log(response.data);
+            //console.log(response.data);
             //console.log(response.data[1][1]);
         } catch (error) {
             //console.error('Error fetching data: ', error);
@@ -42,11 +42,11 @@ const TopFiveActorsSection = () => {
         const url = `${baseURL}/actor_details?f_name=${actor[0]}&l_name=${actor[1]}`;
         const response = await axios.get(url);
         console.log(response.data);
-        setFilmDetails(response.data);
+        setActorDetails(response.data);
         setPopupActive(true);
     }
 
-    const closeFilmPopup = () => {
+    const closeActorPopup = () => {
         setPopupActive(false);
     };
 
@@ -58,7 +58,7 @@ const TopFiveActorsSection = () => {
                     <Card key={index} title={item[0] + " " + item[1]} rentals={item[2]} openPopup={() => openPopup(item)} />
                 ))}
             </div>
-            <ActorPopup isActive={popupActive} closePopup={closeFilmPopup} details={filmDetails["0"]}/>
+            <ActorPopup isActive={popupActive} closePopup={closeActorPopup} details={actorDetails["0"]}/>
         </div>
 
     );
