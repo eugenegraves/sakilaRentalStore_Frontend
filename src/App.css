@@ -22,6 +22,7 @@ body::-webkit-scrollbar {
   overflow: hidden;
   width: 100vw;
   padding-top: 20px;
+  background-color: #131313;
 }
 
 .navbar ul {

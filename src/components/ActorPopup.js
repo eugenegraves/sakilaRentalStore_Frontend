@@ -1,8 +1,6 @@
 import React from "react";
 
 const FilmPopup = ({ isActive, closePopup, details }) => {
-    console.log(details);
-    console.log(details);
     return (
         isActive && (
             <div className="popup-overlay">
