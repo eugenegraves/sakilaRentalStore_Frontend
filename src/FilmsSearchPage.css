@@ -22,11 +22,35 @@
     padding-left: 20px;
 }
 
-.filters {
-    display: block;
-    margin: 0 auto;
-}
-
 .search-bar:focus{
     outline: none;
+}
+
+.filters-and-searchButton {
+    display: flex;
+    margin: 20px auto 0;
+    width: 80%;
+}
+
+.filter {
+    width: 30px;
+    height: 30px;
+}
+
+.filter-label {
+    color: rgb(207, 207, 207);
+    font-size: 30px;
+    margin-right: 40px;
+}
+
+.searchButton-container {
+    margin-left: auto;
+}
+
+.searchButton {
+    height: 40px;
+    width: 80px;
+    background-color: rgb(143, 213, 253);
+    border-style: none;
+    border-radius: 10px;
 }
