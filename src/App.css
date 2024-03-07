@@ -157,3 +157,42 @@ body::-webkit-scrollbar {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   position: relative;
 }
+
+.formOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  z-index: 999;
+}
+
+.form {
+  width: 80%;
+  max-width: 600px;
+  background-color: #333333;
+  color: rgb(206, 206, 206);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.rental-button {
+  margin: 45px 0;
+  padding: 5px;
+  border-radius: 5px;
+  border-style: none;
+  display: none;
+}
+
+.card:hover .rental-button {
+  display: inline-block;
+}
+
+.rental-button:hover {
+  background-color: rgb(201, 230, 255);
+}

@@ -41,6 +41,7 @@ const TopFiveFilmsSection = () => {
         //const encodedTitle = encodeURIComponent(title);
         const url = `${baseURL}/film_details?title=${title[1]}`;
         const response = await axios.get(url);
+        console.log(response.data);
         setFilmDetails(response.data["0"]);
         setPopupActive(true);
     }

@@ -85,3 +85,16 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+  .available {
+    color: green;
+  }
+
+  .not-available {
+    color: red;
+  }
+
+  .availability-check {
+    height: 40px;
+    width: 160px;
+  }

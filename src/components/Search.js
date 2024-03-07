@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import FilmPopup from "./FilmPopup";
+import RentalForm from "./RentalForm";
 
-function Card({ id, title, openPopup }) {
+function Card({ id, title, openPopup, openRentalForm }) {
     return (
         <div className='card' key={id}>
             <h2 className='card-title'>{title}</h2>
             <div className='pseudo-picture'>
                 <button className='details-button' onClick={openPopup}>View Details</button>
+                <button className='rental-button' onClick={() => openRentalForm(title)}>Rent Film</button>
             </div>
         </div>
     );
@@ -30,6 +32,8 @@ const Search = () => {
     const [filteredData, setFilteredData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [popupActive, setPopupActive] = useState(false);
+    const [rentalFormActive, setRentalFormActive] = useState(false);
+    const [filmToRent, setFilmToRent] = useState('')
     const baseURL = "http://127.0.0.1:5000";
 
     const handleSearchChange = (event) => {
@@ -80,10 +84,19 @@ const Search = () => {
         console.log(response.data);
         setFilmDetails(response.data["0"]);
         setPopupActive(true);
-    }
+    };
+
+    const openRentalForm = (title) => {
+        setRentalFormActive(true);
+        setFilmToRent(title);
+    };
 
     const closeFilmPopup = () => {
         setPopupActive(false);
+    };
+
+    const closeRentalForm = () => {
+        setRentalFormActive(false);
     };
 
     return (
@@ -107,10 +120,11 @@ const Search = () => {
                     <h1 className='topFive-header'>Films</h1>
                     <div className='card-container'>
                         {filteredData.map((item, index) => (
-                            <Card key={index} id={index} title={item[0]} openPopup={() => openPopup(item[0])} />
+                            <Card key={index} id={index} title={item[0]} openPopup={() => openPopup(item[0])} openRentalForm={() => openRentalForm(item[0])} />
                         ))}
                     </div>
                     <FilmPopup isActive={popupActive} closePopup={closeFilmPopup} details={filmDetails}/>
+                    <RentalForm isActive={rentalFormActive} closeForm={closeRentalForm} title={filmToRent} />
                 </div>
             </div>
         </div>
